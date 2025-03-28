@@ -23,13 +23,13 @@ public class Card {
     private String name;
     private String effect;
     @Enumerated(EnumType.STRING)
-    private CardType type;  // monster, spell, trap
+    private CardType type;
     @Enumerated(EnumType.STRING)
     private MonsterAttribute attribute;
     private Integer levelRank;
-    private MonsterType monsterType; // warrior, beast, machine
+    private MonsterType monsterType;
     @Enumerated(EnumType.STRING)
-    private List<MonsterCategory> monsterCategory; // xyz, synchro effect
+    private List<MonsterCategory> monsterCategory;
     private Integer attack;
     private Integer defense;
     private String pendulumEffect;
