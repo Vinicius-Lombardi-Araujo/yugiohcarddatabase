@@ -38,5 +38,5 @@ public class Card {
     private List<LinkArrow> linkArrows;
     @Enumerated(EnumType.ORDINAL)
     private SpellTrapType spellTrapType;
-    private String image;
+    private String imageUrl;
 }
