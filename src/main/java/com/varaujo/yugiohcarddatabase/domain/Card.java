@@ -33,7 +33,7 @@ public class Card {
     private Integer attack;
     private Integer defense;
     private String pendulumEffect;
-    private Integer pendudulumScale;
+    private Integer pendulumScale;
     @Enumerated(EnumType.ORDINAL)
     private List<LinkArrow> linkArrows;
     @Enumerated(EnumType.ORDINAL)
