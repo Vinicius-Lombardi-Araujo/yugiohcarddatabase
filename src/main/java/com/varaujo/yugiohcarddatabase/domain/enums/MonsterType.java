@@ -1,0 +1,30 @@
+package com.varaujo.yugiohcarddatabase.domain.enums;
+
+public enum MonsterType {
+    AQUA,
+    BEAST,
+    BEASTWARRIOR,
+    CREATORGOD,
+    CYBERSE,
+    DINOSAUR,
+    DIVINEBEAST,
+    DRAGON,
+    FAIRY,
+    FIEND,
+    FISH,
+    INSECT,
+    ILLUSION,
+    MACHINE,
+    PLANT,
+    PSYCHIC,
+    PYRO,
+    REPTILE,
+    ROCK,
+    SEASERPENT,
+    SPELLCASTER,
+    THUNDER,
+    WARRIOR,
+    WINGEDBEAST,
+    WYRM,
+    ZOMBIE
+}
