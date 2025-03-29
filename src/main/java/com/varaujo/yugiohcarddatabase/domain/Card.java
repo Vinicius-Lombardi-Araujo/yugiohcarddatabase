@@ -34,9 +34,9 @@ public class Card {
     private Integer defense;
     private String pendulumEffect;
     private Integer pendulumScale;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private List<LinkArrow> linkArrows;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private SpellTrapType spellTrapType;
     private String imageUrl;
 }
