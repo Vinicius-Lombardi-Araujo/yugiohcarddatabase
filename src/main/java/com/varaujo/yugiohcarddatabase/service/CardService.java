@@ -48,8 +48,8 @@ public class CardService {
     }
     
     private void mergeCard(Card updatedCard, Card existingCard) {
-        if(StringUtils.isBlank(updatedCard.getName())) existingCard.setName(updatedCard.getName());
-        if(StringUtils.isBlank(updatedCard.getEffect())) existingCard.setEffect(updatedCard.getEffect());
+        if(!StringUtils.isBlank(updatedCard.getName())) existingCard.setName(updatedCard.getName());
+        if(!StringUtils.isBlank(updatedCard.getEffect())) existingCard.setEffect(updatedCard.getEffect());
         if(updatedCard.getType() != null) existingCard.setType(updatedCard.getType());
         if(updatedCard.getAttribute() != null) existingCard.setAttribute(updatedCard.getAttribute());
         if(updatedCard.getLevelRank() != null) existingCard.setLevelRank(updatedCard.getLevelRank());
@@ -57,11 +57,11 @@ public class CardService {
         if(updatedCard.getMonsterCategory() != null) existingCard.setMonsterCategory(updatedCard.getMonsterCategory());
         if(updatedCard.getAttack() != null) existingCard.setAttack(updatedCard.getAttack());
         if(updatedCard.getDefense() != null) existingCard.setDefense(updatedCard.getDefense());
-        if(StringUtils.isBlank(updatedCard.getPendulumEffect())) existingCard.setPendulumEffect(updatedCard.getPendulumEffect());
+        if(!StringUtils.isBlank(updatedCard.getPendulumEffect())) existingCard.setPendulumEffect(updatedCard.getPendulumEffect());
         if(updatedCard.getPendulumScale() != null) existingCard.setPendulumScale(updatedCard.getPendulumScale());
         if(updatedCard.getLinkArrows().isEmpty()) existingCard.setLinkArrows(updatedCard.getLinkArrows());
         if(updatedCard.getSpellTrapType() != null) existingCard.setSpellTrapType(updatedCard.getSpellTrapType());
-        if(StringUtils.isBlank(updatedCard.getImageUrl())) existingCard.setImageUrl(updatedCard.getImageUrl());
+        if(!StringUtils.isBlank(updatedCard.getImageUrl())) existingCard.setImageUrl(updatedCard.getImageUrl());
     }
 
 }
