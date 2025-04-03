@@ -33,8 +33,8 @@ public class CardService {
                 .orElseThrow(Exception::new);
     }
 
-    public Card update(Card card) throws Exception {
-        Card existingCard = cardRepository.findById(card.getId())
+    public Card update(Long id, Card card) throws Exception {
+        Card existingCard = cardRepository.findById(id)
                 .orElseThrow(Exception::new);
 
         if(!card.getName().isEmpty()) existingCard.setName(card.getName());
