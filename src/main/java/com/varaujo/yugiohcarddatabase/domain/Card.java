@@ -2,19 +2,13 @@ package com.varaujo.yugiohcarddatabase.domain;
 
 import com.varaujo.yugiohcarddatabase.domain.enums.*;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "CARD")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class Card {
 
     @Id
