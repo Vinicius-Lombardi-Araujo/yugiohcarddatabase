@@ -49,7 +49,7 @@ public class CardService {
     
     private void mergeCard(Card updatedCard, Card existingCard) {
         if(!StringUtils.isBlank(updatedCard.getName())) existingCard.setName(updatedCard.getName());
-        if(!StringUtils.isBlank(updatedCard.getEffect())) existingCard.setEffect(updatedCard.getEffect());
+        if(!StringUtils.isBlank(updatedCard.getText())) existingCard.setText(updatedCard.getText());
         if(updatedCard.getType() != null) existingCard.setType(updatedCard.getType());
         if(updatedCard.getAttribute() != null) existingCard.setAttribute(updatedCard.getAttribute());
         if(updatedCard.getLevelRank() != null) existingCard.setLevelRank(updatedCard.getLevelRank());

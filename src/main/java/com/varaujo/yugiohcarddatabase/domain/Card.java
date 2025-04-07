@@ -15,7 +15,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String effect;
+    private String text;
     @Enumerated(EnumType.STRING)
     private CardType type;
     @Enumerated(EnumType.STRING)
