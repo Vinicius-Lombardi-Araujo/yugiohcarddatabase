@@ -1,6 +1,7 @@
 package com.varaujo.yugiohcarddatabase.service;
 
 import com.varaujo.yugiohcarddatabase.domain.Card;
+import com.varaujo.yugiohcarddatabase.domain.enums.CardType;
 import com.varaujo.yugiohcarddatabase.repository.CardRepository;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.stereotype.Service;
@@ -51,17 +52,21 @@ public class CardService {
         if(!StringUtils.isBlank(updatedCard.getName())) existingCard.setName(updatedCard.getName());
         if(!StringUtils.isBlank(updatedCard.getText())) existingCard.setText(updatedCard.getText());
         if(updatedCard.getType() != null) existingCard.setType(updatedCard.getType());
-        if(updatedCard.getAttribute() != null) existingCard.setAttribute(updatedCard.getAttribute());
-        if(updatedCard.getLevelRank() != null) existingCard.setLevelRank(updatedCard.getLevelRank());
-        if(updatedCard.getMonsterType() != null) existingCard.setMonsterType(updatedCard.getMonsterType());
-        if(updatedCard.getMonsterCategory() != null) existingCard.setMonsterCategory(updatedCard.getMonsterCategory());
-        if(updatedCard.getAttack() != null) existingCard.setAttack(updatedCard.getAttack());
-        if(updatedCard.getDefense() != null) existingCard.setDefense(updatedCard.getDefense());
-        if(!StringUtils.isBlank(updatedCard.getPendulumEffect())) existingCard.setPendulumEffect(updatedCard.getPendulumEffect());
-        if(updatedCard.getPendulumScale() != null) existingCard.setPendulumScale(updatedCard.getPendulumScale());
-        if(updatedCard.getLinkArrows().isEmpty()) existingCard.setLinkArrows(updatedCard.getLinkArrows());
-        if(updatedCard.getSpellTrapType() != null) existingCard.setSpellTrapType(updatedCard.getSpellTrapType());
+        if(updatedCard.getSets() != null && !updatedCard.getSets().isEmpty()) existingCard.setSets(updatedCard.getSets());
         if(!StringUtils.isBlank(updatedCard.getImageUrl())) existingCard.setImageUrl(updatedCard.getImageUrl());
-    }
 
+        if(updatedCard.getType().equals(CardType.MONSTER)) {
+            if (updatedCard.getAttribute() != null) existingCard.setAttribute(updatedCard.getAttribute());
+            if (updatedCard.getLevelRank() != null) existingCard.setLevelRank(updatedCard.getLevelRank());
+            if (updatedCard.getMonsterType() != null) existingCard.setMonsterType(updatedCard.getMonsterType());
+            if (updatedCard.getMonsterCategory() != null) existingCard.setMonsterCategory(updatedCard.getMonsterCategory());
+            if (updatedCard.getAttack() != null) existingCard.setAttack(updatedCard.getAttack());
+            if (updatedCard.getDefense() != null) existingCard.setDefense(updatedCard.getDefense());
+            if (!StringUtils.isBlank(updatedCard.getPendulumEffect())) existingCard.setPendulumEffect(updatedCard.getPendulumEffect());
+            if (updatedCard.getPendulumScale() != null) existingCard.setPendulumScale(updatedCard.getPendulumScale());
+            if (updatedCard.getLinkArrows().isEmpty()) existingCard.setLinkArrows(updatedCard.getLinkArrows());
+        } else {
+            if(updatedCard.getSpellTrapType() != null) existingCard.setSpellTrapType(updatedCard.getSpellTrapType());
+        }
+    }
 }
