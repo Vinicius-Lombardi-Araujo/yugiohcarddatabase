@@ -38,35 +38,13 @@ public class CardService {
     public Card update(Long id, Card card) throws Exception {
         Card existingCard = cardRepository.findById(id)
                 .orElseThrow(Exception::new);
-        mergeCard(card, existingCard);
-        return cardRepository.save(existingCard);
+        card.setId(id);
+        return cardRepository.save(card);
     }
 
     public void delete(Long id) throws Exception {
         Card card = cardRepository.findById(id)
                 .orElseThrow(Exception::new);
         cardRepository.delete(card);
-    }
-    
-    private void mergeCard(Card updatedCard, Card existingCard) {
-        if(!StringUtils.isBlank(updatedCard.getName())) existingCard.setName(updatedCard.getName());
-        if(!StringUtils.isBlank(updatedCard.getText())) existingCard.setText(updatedCard.getText());
-        if(updatedCard.getType() != null) existingCard.setType(updatedCard.getType());
-        if(updatedCard.getSets() != null && !updatedCard.getSets().isEmpty()) existingCard.setSets(updatedCard.getSets());
-        if(!StringUtils.isBlank(updatedCard.getImageUrl())) existingCard.setImageUrl(updatedCard.getImageUrl());
-
-        if(updatedCard.getType().equals(CardType.MONSTER)) {
-            if (updatedCard.getAttribute() != null) existingCard.setAttribute(updatedCard.getAttribute());
-            if (updatedCard.getLevelRank() != null) existingCard.setLevelRank(updatedCard.getLevelRank());
-            if (updatedCard.getMonsterType() != null) existingCard.setMonsterType(updatedCard.getMonsterType());
-            if (updatedCard.getMonsterCategory() != null) existingCard.setMonsterCategory(updatedCard.getMonsterCategory());
-            if (updatedCard.getAttack() != null) existingCard.setAttack(updatedCard.getAttack());
-            if (updatedCard.getDefense() != null) existingCard.setDefense(updatedCard.getDefense());
-            if (!StringUtils.isBlank(updatedCard.getPendulumEffect())) existingCard.setPendulumEffect(updatedCard.getPendulumEffect());
-            if (updatedCard.getPendulumScale() != null) existingCard.setPendulumScale(updatedCard.getPendulumScale());
-            if (updatedCard.getLinkArrows().isEmpty()) existingCard.setLinkArrows(updatedCard.getLinkArrows());
-        } else {
-            if(updatedCard.getSpellTrapType() != null) existingCard.setSpellTrapType(updatedCard.getSpellTrapType());
-        }
     }
 }
