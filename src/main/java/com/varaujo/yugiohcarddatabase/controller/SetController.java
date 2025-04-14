@@ -2,9 +2,9 @@ package com.varaujo.yugiohsetdatabase.controller;
 
 import com.varaujo.yugiohcarddatabase.domain.Set;
 import com.varaujo.yugiohcarddatabase.service.SetService;
-import com.varaujo.yugiohsetdatabase.domain.Card;
-import com.varaujo.yugiohsetdatabase.service.CardService;
-import com.varaujo.yugiohsetdatabase.service.SetService;
+import com.varaujo.yugiohcarddatabase.domain.Card;
+import com.varaujo.yugiohcarddatabase.service.CardService;
+import com.varaujo.yugiohcarddatabase.service.SetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
