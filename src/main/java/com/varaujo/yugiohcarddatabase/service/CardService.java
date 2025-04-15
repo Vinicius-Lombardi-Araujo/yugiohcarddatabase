@@ -1,12 +1,9 @@
 package com.varaujo.yugiohcarddatabase.service;
 
 import com.varaujo.yugiohcarddatabase.domain.Card;
-import com.varaujo.yugiohcarddatabase.domain.enums.CardType;
 import com.varaujo.yugiohcarddatabase.repository.CardRepository;
-import io.micrometer.common.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

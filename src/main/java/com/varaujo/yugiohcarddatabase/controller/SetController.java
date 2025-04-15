@@ -1,4 +1,4 @@
-package com.varaujo.yugiohsetdatabase.controller;
+package com.varaujo.yugiohcarddatabase.controller;
 
 import com.varaujo.yugiohcarddatabase.domain.Set;
 import com.varaujo.yugiohcarddatabase.service.SetService;
