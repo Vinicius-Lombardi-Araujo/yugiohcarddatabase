@@ -1,5 +1,6 @@
 package com.varaujo.yugiohcarddatabase.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.varaujo.yugiohcarddatabase.domain.enums.Rarity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -21,6 +22,7 @@ public class SetCard {
 
     @ManyToOne
     @JoinColumn(name = "CARD_ID")
+    @JsonBackReference
     private Card card;
 
     @Column(unique = true)

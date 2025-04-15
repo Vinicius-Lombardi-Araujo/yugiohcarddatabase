@@ -1,5 +1,6 @@
 package com.varaujo.yugiohcarddatabase.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.varaujo.yugiohcarddatabase.domain.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -53,8 +55,9 @@ public class Card {
     @Enumerated(EnumType.STRING)
     private SpellTrapType spellTrapType;
 
-    @OneToMany(mappedBy = "card")
+    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
     @NotNull
+    @JsonManagedReference
     private List<SetCard> sets;
 
     @NotBlank
